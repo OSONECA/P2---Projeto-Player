@@ -1,6 +1,6 @@
 <?php
 
-class player{
+class Player{
     public  string $nickname;
     public  int $nivel;
     public  $inventario;
@@ -8,7 +8,7 @@ class player{
     public function __construct($nickname) {
         $this->nickname=$nickname;
         $this->nivel= 0;
-        $this->inventario= new inventario();
+        $this->inventario= new Inventario();
     }
 
     public function getnickname () {
@@ -39,7 +39,7 @@ class player{
         $this->nivel++; 
         $aumentoCapacidade = 3; 
         $novaCapacidade = $this->inventario->getCapacidade() + $aumentoCapacidade;
-        $this->inventario->setCapacidade($novaCapacidade);  // Atualiza a capacidade no inventário
+        $this->inventario->setCapacidade($novaCapacidade);  
         
         echo "Você subiu para o nível " . $this->nivel . ". Nova capacidade do inventário: " . $novaCapacidade . "<br>";
     }
@@ -64,3 +64,4 @@ class player{
         }
     }
 }
+?>
